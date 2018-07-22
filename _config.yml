@@ -1,1 +1,8 @@
+destination: public
+source: src
+
 theme: jekyll-theme-cayman
+title: How Much Life Insurance for Me?
+description: Calculated using a couple numbers
+
+exclude: ['node_modules']

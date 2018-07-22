@@ -1,0 +1,27 @@
+{
+  "name": "howmuchlifeinsuranceforme",
+  "version": "1.0.0",
+  "description": "Calculate how much life insurance you need",
+  "main": "index.js",
+  "repository": "https://github.com/spejamchr/hmlifm.git",
+  "author": "Spencer Christiansen <jc.spencer92@gmail.com>",
+  "private": true,
+  "plugins": [
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "preact": "^8.2.9",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
