@@ -6,14 +6,6 @@
   "repository": "https://github.com/spejamchr/hmlifm.git",
   "author": "Spencer Christiansen <jc.spencer92@gmail.com>",
   "private": true,
-  "plugins": [
-    [
-      "transform-react-jsx",
-      {
-        "pragma": "h"
-      }
-    ]
-  ],
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
