@@ -20,7 +20,13 @@ module.exports = {
           "plugins": [
             ["transform-react-jsx", { "pragma": "h" }],
           ],
-          presets: ['react', 'env'],
+          presets: [
+            'react',
+            [
+              'env',
+              { "targets": { "browsers": ["last 2 versions", "ie >= 7"] } },
+            ],
+          ],
         },
       },
     ],

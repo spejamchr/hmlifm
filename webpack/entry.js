@@ -1,4 +1,4 @@
 import { h, render } from 'preact';
-import Calculator from './components/Calculator.jsx'
+import Calculator from './components/Calculator.jsx';
 
-render(<Calculator />, document.body);
+render(<Calculator />, document.getElementById('preact'));
