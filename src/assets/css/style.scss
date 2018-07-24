@@ -1,0 +1,9 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.main-content table th,
+.main-content table td {
+  border: 0;
+}

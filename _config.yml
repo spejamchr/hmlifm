@@ -2,7 +2,7 @@ destination: public
 source: src
 
 theme: jekyll-theme-cayman
-title: How Much Life Insurance for Me?
-description: Calculated using a couple numbers
+title: Life Insurance Calculator
+description: How much life insurance for me?
 
 exclude: ['node_modules']

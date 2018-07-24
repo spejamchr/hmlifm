@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import Field from './Field.jsx';
+import val_to_money from '../utilities/val_to_money.js';
 
 class Calculator extends Component {
   constructor(props) {
@@ -10,19 +11,20 @@ class Calculator extends Component {
 
   defaults() {
     return {
-      fe: 10000,
-      m: 122000,
-      cc: 5000,
-      al: 2000,
-      o: 0,
-      msi: 1000,
-      lpli: 120000,
+      fe: 10000*100,
+      m: 122000*100,
+      cc: 5000*100,
+      al: 2000*100,
+      o: 0*100,
+      msi: 1000*100,
+      lpli: 120000*100,
     };
   }
 
   handleChange(event, id_key) {
+    const value = parseInt(event.target.value.replace(/[^0-9]/g, '')) || 0
     this.setState({
-      [id_key]: (parseInt(event.target.value) || 0)
+      [id_key]: value
     });
   }
 
@@ -45,60 +47,77 @@ class Calculator extends Component {
 
   render() {
     return (
-      <table style="border-collapse:collapse;">
+      <table class='no-border'>
         <tbody>
           <tr>
             <Field
               name='Funeral Expense'
-              val={this.state.fe}
+              val={val_to_money(this.state.fe)}
               id_key='fe'
               handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <td>
               Debts you want paid off
+            </td>
+            <td>
             </td>
           </tr>
           <tr>
             <Field
               mindent={true}
               name='Mortgage'
-              val={this.state.m}
+              val={val_to_money(this.state.m)}
               id_key='m'
               handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <Field
               mindent={true}
               name='Credit Cards'
-              val={this.state.cc}
+              val={val_to_money(this.state.cc)}
               id_key='cc'
               handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <Field
               mindent={true}
               name='Auto Loans'
-              val={this.state.al}
+              val={val_to_money(this.state.al)}
               id_key='al'
               handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <Field
               mindent={true}
               name='Other'
-              val={this.state.o}
+              val={val_to_money(this.state.o)}
               id_key='o'
               handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <Field
               name='Monthly Survivor Income'
-              val={this.state.msi}
+              val={val_to_money(this.state.msi)}
               id_key='msi'
               handleChange={this.handleChange} />
             <td>
-              {this.totalSurvivorIncome()}
+              <input readonly
+                style="border: none;
+                background-color: #27ff99;
+                text-align: right"
+                value={val_to_money(this.totalSurvivorIncome())}
+              />
             </td>
           </tr>
           <tr>
@@ -106,29 +125,34 @@ class Calculator extends Component {
               Total Life Insurance Needed
             </td>
             <td>
-              {this.totalLifeInsurance()}
+              <input readonly
+                style="border: none;
+                background-color: #27ff99;
+                text-align: right"
+                value={val_to_money(this.totalLifeInsurance())}
+              />
             </td>
           </tr>
           <tr>
             <Field
               name='Less Present Life Insurance'
-              val={this.state.lpli}
+              val={val_to_money(this.state.lpli)}
               id_key='lpli'
               handleChange={this.handleChange} />
-          </tr>
-          <tr>
-            <Field
-              name='Less Present Life Insurance'
-              val={this.state.lpli}
-              id_key='lpli'
-              handleChange={this.handleChange} />
+            <td>
+            </td>
           </tr>
           <tr>
             <td>
               New Life Insurance Needed
             </td>
             <td>
-              {this.newLifeInsurance()}
+              <input readonly
+                style="border: none;
+                background-color: #27ff99;
+                text-align: right"
+                value={val_to_money(this.newLifeInsurance())}
+              />
             </td>
           </tr>
         </tbody>

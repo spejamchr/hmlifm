@@ -1,4 +1,5 @@
 import { h, Component }from 'preact';
+import val_to_money from '../utilities/val_to_money.js';
 
 class Field extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Field extends Component {
             type="text"
             style="text-align: right;
             border: none;
-            background-color: yellow;
+            background-color: #f8ff29;
             margin-left: 30px"
             value={this.props.val}
             onChange={this.handleChange} />
