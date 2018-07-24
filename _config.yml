@@ -1,4 +1,5 @@
 destination: public
+
 source: src
 
 theme: jekyll-theme-cayman
