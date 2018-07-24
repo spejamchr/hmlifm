@@ -3,5 +3,4 @@
 .jekyll-metadata
 .DS_Store
 public
-src/assets/bundle.js
 node_modules
