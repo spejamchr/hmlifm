@@ -9,21 +9,29 @@ class Field extends Component {
   }
 
   handleChange(event) {
-    this.props.handleChange(event, this.props.name);
+    this.props.handleChange(event, this.props.id_key);
   }
 
   render() {
+    const mident = this.props.mindent ? 'margin-left: 30px;' : ''
     return (
-      <tr>
-        <td>
-          <label>
+      <td style="text-align: right;">
+        <span>
+          <label style={`float: left;${mident}`}>
             {this.props.name}:
           </label>
-        </td>
-        <td>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </td>
-      </tr>
+        </span>
+        <span>
+          <input
+            type="text"
+            style="text-align: right;
+            border: none;
+            background-color: yellow;
+            margin-left: 30px"
+            value={this.props.val}
+            onChange={this.handleChange} />
+        </span>
+      </td>
     );
   }
 }
