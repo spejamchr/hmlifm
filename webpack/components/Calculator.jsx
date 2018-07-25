@@ -11,13 +11,13 @@ class Calculator extends Component {
 
   defaults() {
     return {
-      fe: 10000*100,
-      m: 122000*100,
-      cc: 5000*100,
-      al: 2000*100,
+      fe: 0*100,
+      m: 0*100,
+      cc: 0*100,
+      al: 0*100,
       o: 0*100,
-      msi: 1000*100,
-      lpli: 120000*100,
+      msi: 0*100,
+      lpli: 0*100,
     };
   }
 
